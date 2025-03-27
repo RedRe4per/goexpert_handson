@@ -103,6 +103,7 @@
 1. Type `aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/<PolicyName> --user-name <new-user-name>` replacing `<PolicyName>` with the name of the policy you want to attach and `<new-user-name>` with the username of the IAM user.
    </br>PolicyName要去IAM侧面的policies里面找.
 2. Press Enter. You will receive confirmation that the policy has been attached to the user.
+   </br>这里运行完指令成功的话是**不会返回输出**的,很多AWS指令都是这样. 需要验证权限时,使用 `aws iam list-attached-user-policies --user-name devops0328` 查看权限, 或者直接去AWS Concole里面IAM -> Users里面点开看.
 
 #### Step 10: Delete an IAM User
 1. Type `aws iam delete-user --user-name <existing-user-name>` replacing `<existing-user-name>` with the name of the user you wish to delete.
