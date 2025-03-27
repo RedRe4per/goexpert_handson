@@ -105,6 +105,9 @@
 2. Press Enter. You will receive confirmation that the policy has been attached to the user.
    </br>这里运行完指令成功的话是**不会返回输出**的,很多AWS指令都是这样. 需要验证权限时,使用 `aws iam list-attached-user-policies --user-name devops0328` 查看权限, 或者直接去AWS Concole里面IAM -> Users里面点开看.
 
+#### Step 9b: Detach a Policy from an IAM User
+1. Type `aws iam detach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --user-name <new-user-name>` replacing `<PolicyName>` with the name of the policy you want to detach and `<new-user-name>` with the username of the IAM user.
+
 #### Step 10: Delete an IAM User
 1. Type `aws iam delete-user --user-name <existing-user-name>` replacing `<existing-user-name>` with the name of the user you wish to delete.
 2. Press Enter. You will receive confirmation that the user has been deleted.
