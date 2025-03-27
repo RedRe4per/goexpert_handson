@@ -69,7 +69,10 @@
 1. Type `aws ec2 run-instances --image-id ami-XXXXX --count 1 --instance-type t2.micro --key-name <your-key-pair> --security-groups <your-security-group>` replacing `ami-XXXXX` with an appropriate AMI ID, `<your-key-pair>` with your SSH key pair, and `<your-security-group>` with your security group name.
    </br>这里要注意的点: ami-XXXXX 要去AWS EC2 console里面,点开Launch Instance后能找到. <your-key-pair>要去EC2 console中左边有Key Pairs点开生成,生成后.pem文件可以自己保存到mac的 `.ssh` 里(推荐但是不强制). 指令里这个不需要后缀. `<your-security-group>` 要去EC2 dashboard左边按他的规则创建.
 3. Press Enter. You'll receive details of the instance being launched.
-我有个问题.这里实际上我用了aws cli指令来创建了一个ec2实例,而不是在aws上单纯的click.这很好,但是获得ami-XXXXX <your-key-pair> <your-security-group>的过程,我依然要去aws dashboard上有大量的click操作.请问这是为什么?我目前考虑有两种可能性,第一种是我是初学者所以获得这些key或者name的方式不完善; 第二种可能是本身这么做是对的,第一次用这个指令都要这么操作,但是指令跑通后可以复用来创建多个ec2 instance (反之,点击就要点很多次了).请问这两种可能性有哪个是对的?或者说都不对是因为其他原因呢?
+</br>问题.这里实际上我用了aws cli指令来创建了一个ec2实例,而不是在aws上单纯的click.获得ami-XXXXX <your-key-pair> <your-security-group>的过程,我依然要去aws dashboard上有大量的click操作.请问这是为什么?我目前考虑有两种可能性,第一种是我是初学者所以获得这些key或者name的方式不完善; 第二种可能是本身这么做是对的,第一次用这个指令都要这么操作,但是指令跑通后可以复用来创建多个ec2 instance (反之,点击就要点很多次了).请问这两种可能性有哪个是对的?或者说都不对是因为其他原因呢?
+<details>
+  <summary>答案</summary>
+
 你的观察是非常准确的，实际上你提到的两种可能性都有一定的道理。让我们来详细分析一下：
 
 1. 初学者阶段的操作
@@ -86,6 +89,7 @@
 随着经验的增加，使用 CLI 和自动化工具是更高效的选择，尤其是在需要频繁创建和管理资源的情况下。
 自动化和基础设施即代码是现代云计算管理的趋势，可以显著提高效率和一致性。
 因此，你的理解是正确的，初学者阶段通过控制台操作是正常的，而随着经验的积累，自动化和复用 CLI 指令将成为更高效的工作方式。
+</details>
 
 #### Step 7: List IAM Users
 1. Type `aws iam list-users` and press Enter.
