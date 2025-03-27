@@ -101,6 +101,7 @@
 
 #### Step 9: Attach a Policy to an IAM User
 1. Type `aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/<PolicyName> --user-name <new-user-name>` replacing `<PolicyName>` with the name of the policy you want to attach and `<new-user-name>` with the username of the IAM user.
+   </br>PolicyName要去IAM侧面的policies里面找.
 2. Press Enter. You will receive confirmation that the policy has been attached to the user.
 
 #### Step 10: Delete an IAM User
