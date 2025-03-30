@@ -4,7 +4,29 @@
 **Task**: Create CodeCommit repository
 
 **Objective**: Understand how to set up a CodeCommit repository
+<details>
+  <summary>CodeCommit repository是什么</summary>
 
+AWS CodeCommit 创建的仓库与 GitHub 上的代码库非常相似。AWS CodeCommit 是一个托管的源代码控制服务，支持 Git 协议，允许你在 AWS 云中安全地存储和管理代码。以下是一些 AWS CodeCommit 仓库的特性，与 GitHub 仓库的相似之处：
+
+1. **Git 支持**：
+   - CodeCommit 完全兼容 Git，你可以使用 Git 命令行工具或任何支持 Git 的客户端（如 GitHub Desktop、Sourcetree 等）与 CodeCommit 仓库进行交互。
+
+2. **版本控制**：
+   - 你可以在 CodeCommit 中进行常规的 Git 操作，如克隆、提交、推送、拉取、分支管理和合并等。
+
+3. **安全性**：
+   - CodeCommit 提供了与 AWS IAM 集成的细粒度权限控制，允许你定义谁可以访问和操作仓库。
+   - 数据在传输和存储时都经过加密，确保代码的安全性。
+
+4. **集成**：
+   - CodeCommit 可以与其他 AWS 服务集成，如 AWS CodeBuild、AWS CodePipeline 和 AWS Lambda，支持持续集成和持续交付（CI/CD）工作流。
+
+5. **Web 界面**：
+   - CodeCommit 提供了一个 Web 界面，允许你查看代码、提交历史、分支和合并请求（类似于 GitHub 的 Pull Request）。
+
+虽然 CodeCommit 和 GitHub 在功能上有很多相似之处，但它们的生态系统和集成方式可能有所不同。选择使用哪种服务通常取决于你的具体需求、现有的 AWS 基础设施以及对特定功能的偏好。
+</details>
 ### Step by Step Guide:
 
 1. **Create a CodeCommit repository**
