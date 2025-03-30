@@ -36,6 +36,25 @@ AWS CodeCommit 创建的仓库与 GitHub 上的代码库非常相似。AWS CodeC
     - In `Repository name`, enter a name for your repository.
     - (Optional) In `Description`, enter a description for your repository.
     - Choose `Create`.
+      
+<details>
+  <summary>CodeCommit已经不让新用户创建repo了,怎么解决?</summary>
+
+AWS CodeCommit is no longer available to new customers. Existing customers of AWS CodeCommit can continue to use the service as normal. https://aws.amazon.com/blogs/devops/how-to-migrate-your-aws-codecommit-repository-to-another-git-provider/
+里面介绍的是怎么把AWS codecommit上面的项目迁移到其他平台😭
+
+根据公告，AWS CodeCommit 不再对新客户开放，这表明 AWS 可能在未来不打算对 CodeCommit 进行新的功能开发或扩展。然而，AWS 仍然会为现有客户提供服务，并继续在安全性、可用性和性能方面进行投资。这通常意味着：
+
+现有客户支持：现有的 CodeCommit 用户仍然可以继续使用该服务，AWS 会继续提供支持和维护。
+
+不再新增功能：AWS 可能不会为 CodeCommit 引入新的功能或重大更新，这意味着该服务可能会逐渐被其他更受欢迎或更广泛使用的服务所取代。
+
+鼓励迁移：AWS 提供了迁移指南，帮助用户将他们的代码库转移到其他 Git 提供商（如 GitHub、GitLab 或 Bitbucket），这表明 AWS 可能希望用户逐步转向其他平台。
+
+总的来说，这种策略通常是因为 AWS 可能希望将资源和精力集中在其他更具战略意义的服务上，或者因为市场上已经有其他更成熟的解决方案可以满足用户的需求。对于现有用户来说，虽然可以继续使用 CodeCommit，但考虑迁移到其他平台可能是一个更长远的选择。
+</details>
+
+
 2. **Create Git Crednetial**
     - Service `User` -> your admin account -> Security credentials -> HTTPS Git credentials for AWS CodeCommit 
 3. **Clone the repository**
