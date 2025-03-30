@@ -120,7 +120,8 @@ Hosted Zone（托管区域）：
 托管区域是一个容器，用于存储与特定域名相关的 DNS 记录集。
 在 AWS Route 53 中，托管区域用于管理域名的 DNS 设置，例如 A record(redirect domain to IPv4 address)、CNAME 记录(redirect domain to ther domain)、MX(Mail Exchange Record,指定负责接收电子邮件的邮件服务器) 。AAAA 记录(同A record但是是IPv6), NS 记录（Name Server Record, 指定哪个 DNS 服务器是该域名的权威服务器）
 托管区域可以是“公有”或“私有”的。公有托管区域用于管理互联网可访问的域名，而私有托管区域用于在 VPC 内部管理域名。
-</br>
+
+
 关系和使用：
 当你在 AWS Route 53 中注册一个域名时，AWS 会自动为你创建一个对应的托管区域。
 你可以在托管区域中添加和管理 DNS 记录，以控制域名的解析方式。例如，你可以添加 A 记录将 www.tunespire.com 指向某个 IP 地址，或添加 CNAME 记录将 app.tunespire.com 指向另一个域名。
