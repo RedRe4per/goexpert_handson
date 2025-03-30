@@ -107,6 +107,27 @@ Replace `YOUR-BUCKET-NAME` with the actual name of your S3 bucket.
 1. Go to the Route 53 service in the AWS Management Console.
 2. In the "Domain Registration" section, click "Register Domain".
 3. Search for the domain name you want and follow the prompts to register it.
+<details>
+  <summary>Domain（域名）和Hosted Zone（托管区域）</summary>
+
+
+在 AWS Route 53 中，"domain" 和 "hosted zone" 是两个相关但不同的概念。理解它们的区别有助于更好地管理你的域名和 DNS 设置。
+
+Domain（域名）：
+域名是你在域名注册商（如 Google Domains、AWS Route 53 等）注册的唯一名称，例如 www.tunespire.com。
+域名注册通常包括设置域名的注册信息和选择域名的 DNS 服务器。
+Hosted Zone（托管区域）：
+托管区域是一个容器，用于存储与特定域名相关的 DNS 记录集。
+在 AWS Route 53 中，托管区域用于管理域名的 DNS 设置，例如 A record(redirect domain to IPv4 address)、CNAME 记录(redirect domain to ther domain)、MX(Mail Exchange Record,指定负责接收电子邮件的邮件服务器) 。AAAA 记录(同A record但是是IPv6), NS 记录（Name Server Record, 指定哪个 DNS 服务器是该域名的权威服务器）
+托管区域可以是“公有”或“私有”的。公有托管区域用于管理互联网可访问的域名，而私有托管区域用于在 VPC 内部管理域名。
+</br>
+关系和使用：
+当你在 AWS Route 53 中注册一个域名时，AWS 会自动为你创建一个对应的托管区域。
+你可以在托管区域中添加和管理 DNS 记录，以控制域名的解析方式。例如，你可以添加 A 记录将 www.tunespire.com 指向某个 IP 地址，或添加 CNAME 记录将 app.tunespire.com 指向另一个域名。
+托管区域的设置决定了用户在访问你的域名时，DNS 服务器如何将域名解析为 IP 地址或其他资源。
+因此，托管区域在域名解析过程中扮演了关键角色，帮助你管理和配置域名的 DNS 记录，而域名本身则是你在互联网上的标识。
+</details>
+
 
 #### Step 4: Create Hosted Zone in Route 53
 1. In the Route 53 dashboard, click on "Hosted zones".
