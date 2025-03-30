@@ -9,6 +9,24 @@
 2. Click "Create Bucket", give it a unique name and select us-east-1. (the bucket name using the URL you are going to use in Zone A record setting in step2, e.g. "www.{{ yourname }}.{{ devopsNN }}.learnby.click")
 3. Leave the rest as default and click "Create".
 
+<details>
+  <summary>关于放网站的S3 bucket命名问题</summary>
+
+存储桶名称与域名匹配：如果你希望通过自定义域名（例如，www.example.com）访问你的静态网站，那么你的 S3 存储桶名称应该与该域名完全匹配。这意味着你需要创建一个名为 www.example.com 的 S3 存储桶。存储桶名称必须是全局唯一的，并且遵循 DNS 命名约定。**并且不能是 IP 地址的格式**（例如，192.168.1.1）。
+
+网站域名与 S3 存储桶名称需要完全匹配的原因主要是为了简化域名解析和访问过程。
+
+DNS 解析：当你希望通过自定义域名（例如，www.example.com）访问 S3 上托管的静态网站时，S3 需要知道哪个存储桶与该域名相关联。通过让存储桶名称与域名匹配，AWS 可以直接将域名请求路由到正确的存储桶。
+
+CNAME 记录：在使用自定义域名时，你通常需要在你的域名提供商处设置 CNAME 记录，将你的域名指向 S3 的网站终端节点。匹配的存储桶名称使得这个过程更加直接和无缝。
+
+简化配置：匹配的名称减少了配置错误的可能性，因为它**消除了在域名和存储桶名称之间进行映射的需要**。
+
+一致性和可读性：使用匹配的名称可以提高配置的一致性和可读性，特别是在管理多个域名和存储桶时。
+
+通过确保存储桶名称与域名匹配，你可以更轻松地配置和管理静态网站托管，并确保用户能够通过预期的域名顺利访问网站。
+</details>
+
 #### Step 2: Upload a HTML file
 Here's a simple "Hello World" HTML file: 
 ```html
