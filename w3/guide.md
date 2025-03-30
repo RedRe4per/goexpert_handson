@@ -7,6 +7,7 @@
 
 新用户无法创建repo. 老用户操作步骤看视频: https://jiangren.com.au/study/lesson?programId=670a2b71a7ebc50012af0b6e&lessonId=67459da2bc759bef4207164d&videoId=67aea0ce7e573c0c912a9647
 <details>
+
   <summary>CodeCommit repository是什么</summary>
 
 AWS CodeCommit 创建的仓库与 GitHub 上的代码库非常相似。AWS CodeCommit 是一个托管的源代码控制服务，支持 Git 协议，允许你在 AWS 云中安全地存储和管理代码。以下是一些 AWS CodeCommit 仓库的特性，与 GitHub 仓库的相似之处：
@@ -30,22 +31,14 @@ AWS CodeCommit 创建的仓库与 GitHub 上的代码库非常相似。AWS CodeC
 虽然 CodeCommit 和 GitHub 在功能上有很多相似之处，但它们的生态系统和集成方式可能有所不同。选择使用哪种服务通常取决于你的具体需求、现有的 AWS 基础设施以及对特定功能的偏好。
 </details>
 
-### Step by Step Guide:
 
-1. **Create a CodeCommit repository**
-    - Go to the AWS Management Console and open the CodeCommit console at https://console.aws.amazon.com/codecommit/.
-    - Choose `Create repository`.
-    - In `Repository name`, enter a name for your repository.
-    - (Optional) In `Description`, enter a description for your repository.
-    - Choose `Create`.
-      
 <details>
   <summary>CodeCommit已经不让新用户创建repo了,怎么解决?</summary>
 
 AWS CodeCommit is no longer available to new customers. Existing customers of AWS CodeCommit can continue to use the service as normal. https://aws.amazon.com/blogs/devops/how-to-migrate-your-aws-codecommit-repository-to-another-git-provider/
 里面介绍的是怎么把AWS codecommit上面的项目迁移到其他平台😭
 
-根据公告，AWS CodeCommit 不再对新客户开放，这表明 AWS 可能在未来不打算对 CodeCommit 进行新的功能开发或扩展。然而，AWS 仍然会为现有客户提供服务，并继续在安全性、可用性和性能方面进行投资。这通常意味着：
+根据公告，AWS CodeCommit 不再对新客户开放，这表明 AWS 未来不打算对 CodeCommit 进行新的功能开发或扩展。然而，AWS 仍然会为现有客户提供服务，并继续在安全性、可用性和性能方面进行投资。这通常意味着：
 
 现有客户支持：现有的 CodeCommit 用户仍然可以继续使用该服务，AWS 会继续提供支持和维护。
 
@@ -54,9 +47,19 @@ AWS CodeCommit is no longer available to new customers. Existing customers of AW
 鼓励迁移：AWS 提供了迁移指南，帮助用户将他们的代码库转移到其他 Git 提供商（如 GitHub、GitLab 或 Bitbucket），这表明 AWS 可能希望用户逐步转向其他平台。
 
 总的来说，这种策略通常是因为 AWS 可能希望将资源和精力集中在其他更具战略意义的服务上，或者因为市场上已经有其他更成熟的解决方案可以满足用户的需求。对于现有用户来说，虽然可以继续使用 CodeCommit，但考虑迁移到其他平台可能是一个更长远的选择。
+
+AWS做出决定的原因是竞争不过GitHub, GitLab, and Bitbucket.
 </details>
 
 
+### Step by Step Guide:
+
+1. **Create a CodeCommit repository**
+    - Go to the AWS Management Console and open the CodeCommit console at https://console.aws.amazon.com/codecommit/.
+    - Choose `Create repository`.
+    - In `Repository name`, enter a name for your repository.
+    - (Optional) In `Description`, enter a description for your repository.
+    - Choose `Create`.      
 2. **Create Git Crednetial**
     - Service `User` -> your admin account -> Security credentials -> HTTPS Git credentials for AWS CodeCommit 
 3. **Clone the repository**
