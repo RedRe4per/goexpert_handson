@@ -5,6 +5,8 @@
 
 **Objective**: Execute basic Docker commands and run containers.
 
+在terminal中,可以使用`docker help`来查看docker指令, 并且可以使用 `docker run --help` 来查看指令中 `-h`,`-p`,`-d` 等缩写的意思.
+
 ### Step by Step Guide:
 
 1. **Install Docker**
