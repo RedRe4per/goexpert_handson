@@ -4,6 +4,7 @@
 **Task**: Create CodeCommit repository
 
 **Objective**: Understand how to set up a CodeCommit repository
+新用户无法创建repo. 老用户操作步骤看视频: https://jiangren.com.au/study/lesson?programId=670a2b71a7ebc50012af0b6e&lessonId=67459da2bc759bef4207164d&videoId=67aea0ce7e573c0c912a9647
 <details>
   <summary>CodeCommit repository是什么</summary>
 
