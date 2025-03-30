@@ -163,7 +163,9 @@ Hosted Zone（托管区域）：
 ## Level 3 (Mid-level)
 ### Task: let HTTPS works
 
+S3不支持https,只有cloud
 You can try to follow up with https://docs.aws.amazon.com/AmazonS3/latest/userguide/website-hosting-custom-domain-walkthrough.html
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/tutorial-s3-cloudfront-route53-video-streaming.html
 
 1. Creat cloudfront distribute
 
@@ -180,3 +182,38 @@ You can try to follow up with https://docs.aws.amazon.com/AmazonS3/latest/usergu
    During Creating SSL certificate, you may need to add CNAME.
 
    OK
+
+-----------
+AWS S3 本身不直接支持 HTTPS 来托管静态网站，但你可以通过使用 Amazon CloudFront 来实现 HTTPS 访问。以下是如何使用 CloudFront 和 S3 来托管 HTTPS 静态网站的步骤，以及相关的 SSL/TLS 证书的概念：
+
+使用 CloudFront 实现 HTTPS
+创建 S3 存储桶：
+
+在 S3 中创建一个存储桶，并启用静态网站托管。
+创建 CloudFront 分配（Distribution）：
+
+在 AWS CloudFront 中创建一个分配，将其源设置为你的 S3 存储桶。
+CloudFront 会为你提供一个默认的 HTTPS 终端节点（例如，d1234abcd.cloudfront.net）。
+配置自定义域名（可选）：
+
+如果你希望使用自定义域名（如 www.example.com），你需要在 CloudFront 分配中配置自定义域名。
+在你的域名注册商（或 Route 53）中，创建一个 CNAME 记录，将你的自定义域名指向 CloudFront 提供的域名。
+配置 SSL/TLS 证书：
+
+为了使用 HTTPS，你需要一个 SSL/TLS 证书。AWS 提供了免费的 AWS Certificate Manager (ACM) 服务来管理证书。
+在 ACM 中请求一个证书，并将其与 CloudFront 分配关联。
+证书验证通常通过 DNS 验证或电子邮件验证完成。
+SSL/TLS 证书
+SSL（Secure Sockets Layer）和 TLS（Transport Layer Security）：
+
+SSL 和 TLS 是用于加密网络通信的协议。TLS 是 SSL 的继任者，提供更好的安全性。
+证书用于验证服务器的身份，并加密客户端和服务器之间的通信。
+证书的作用：
+
+确保数据在传输过程中不被窃听或篡改。
+验证服务器的身份，防止中间人攻击。
+注册证书：
+
+你可以通过 AWS Certificate Manager 免费申请证书，或者从第三方证书颁发机构（CA）购买。
+申请证书时，你需要验证对域名的所有权。
+通过这些步骤，你可以使用 CloudFront 为 S3 托管的静态网站提供 HTTPS 支持，确保数据传输的安全性和完整性。
