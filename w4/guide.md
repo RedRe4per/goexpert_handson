@@ -198,7 +198,10 @@ redis = Redis(host='redis', port=6379)
 - update container name
 - update python base image
   
-升级版本的话可以在 https://hub.docker.com/_/python 来找 image.
+升级版本的话可以在 https://hub.docker.com/_/python 来找 image. 找完以后修改 Dockerfile 里面的基础镜像:
+  ```python
+FROM python:3.10-alpine AS builder  
+```
 <details> 
   <summary>关于 https://hub.docker.com </summary>
 Docker Hub 是一个云端的容器注册表服务，提供以下功能：
