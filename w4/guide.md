@@ -166,6 +166,8 @@ redis = Redis(host='redis', port=6379)
 这里成功后会进入 redis.exceptions 的 ConnectionError的 list 页面.
 
 到此为止,我们之前所有的工作都是为了测试 dockerfile 中的第一步,也就是创建打包 builder.
+之后按照 https://github.com/RedRe4per/website-visit-count/blob/main/README.md 指示,运行指令来 build image,检查,run image,即可在本机浏览器输入映射的端口号以查看部署后的网页(此时已经与运行redis数据库的docker image相连了.
+
 </details>
 
 <details> 
@@ -195,6 +197,26 @@ redis = Redis(host='redis', port=6379)
 - update port
 - update container name
 - update python base image
+  
+升级版本的话可以在 https://hub.docker.com/_/python 来找 image.
+<details> 
+  <summary>关于 https://hub.docker.com </summary>
+Docker Hub 是一个云端的容器注册表服务，提供以下功能：
+
+1. **镜像存储**：
+   - 存储和分发 Docker 镜像。
+
+2. **镜像查找**：
+   - 搜索和下载官方和社区提供的 Docker 镜像。
+
+3. **自动构建**：
+   - 自动从代码仓库构建镜像。
+
+4. **团队协作**：
+   - 管理和共享团队的镜像。
+
+Docker Hub 是 Docker 生态系统的重要组成部分，帮助开发者轻松管理和分发容器化应用。
+</details>
 
 **Objective**: Understand parameters in Docker file and compose file.
 
