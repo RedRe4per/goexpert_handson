@@ -10,6 +10,7 @@
 <details>
 
   <summary>关于常用的 curl 命令</summary>
+  <div style="color: lightgray;">
 
 
 `curl` 是一个强大的工具，广泛用于测试 API、调试网络请求和自动化脚本中。
@@ -57,7 +58,7 @@
 
 - 当你在 Docker 容器中运行一个服务，并将其端口映射到主机的端口时，可以使用 `curl` 来测试服务是否正常运行。
 - 例如，如果你在 Docker 中运行一个 Web 应用，并将其容器的 80 端口映射到主机的 8080 端口，你可以使用 `curl 127.0.0.1:8080` 来访问该应用。
-
+</div>
 </details>
 
 
@@ -93,7 +94,7 @@
    folk到了我自己的repo,地址是: https://github.com/RedRe4per/website-visit-count
 <details>
   <summary>关于这个dockerfile的repo</summary>
-  -------
+<div style="color: lightgray;">
 这里面是一个python后端.文件结构是
 
 ```
@@ -111,7 +112,7 @@ redis = Redis(host='redis', port=6379)
 ```
 所以这里要启动redis的docker image和后端的docker image.
 在启动redis的docker image时,用到指令`docker run -d -p 6379:6379 --name=redis redislabs/redismod`,其中`--name=redis`是必要的,因为上面的代码中有语句`host='redis'`,即必须使用名称`redis`来识别.
-------
+</div>
 </details>
 
 3. **Build the Docker Image**
