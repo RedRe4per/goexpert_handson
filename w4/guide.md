@@ -94,6 +94,14 @@
 <details>
   <summary>关于这个dockerfile的repo</summary>
 这里面是一个python后端.文件结构是
+    ```python
+      .
+    ├── Dockerfile
+    ├── README.md
+    ├── app.py
+    ├── compose.yaml
+    └── requirements.txt
+```
   ```python
       .
     ├── Dockerfile
