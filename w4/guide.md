@@ -191,10 +191,13 @@ redis = Redis(host='redis', port=6379)
     - Deploy app with docker compose
     - Deploy app with Docker Development Environments
 
-###关于docker compose
+### 关于docker compose
 docker compose这个文件允许同时运行几个 docker image,并且能够指明它们的关系(例如依赖),也就是orchestration.
+
 开启docker compose: `docker compose up -d`
+
 关闭docker compose: `docker compose down`
+
 <details> 
   <summary>详细</summary>
 Docker Compose 是一个用于定义和管理多容器 Docker 应用的工具。它使用 YAML 文件来配置应用的服务、网络和卷。以下是 Docker Compose 的一些关键特性：
