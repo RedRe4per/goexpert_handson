@@ -94,8 +94,9 @@
    folk到了我自己的repo,地址是: https://github.com/RedRe4per/website-visit-count
 
    **怎么开始做给定app的 Dockerfile 的调试?**
-  首先是可以在本机跑这些命令,跑通了再去打包.本机调试就需要先把 GitHub 的 repo 给 clone 下来,也就是和调试 developer 的代码相同的.
-  在本机建一个 Developer 之类的专门文件夹, 然后在里面用 `mkdir docker` 来创建专门的文件夹, 然后 `cd` 进去,再 clone. 这时就可以开始正式调试了.
+
+首先是可以在本机跑这些命令,跑通了再去打包.本机调试就需要先把 GitHub 的 repo 给 clone 下来,也就是和调试 developer 的代码相同的.
+  在本机建一个 Developer 之类的专门文件夹, 然后在里面用 `mkdir docker` 来创建专门的文件夹, 然后 `cd` 进去,再 clone. clone 后再 cd 进去那个根文件夹,输入提示中就会出现(main), 这时就可以开始正式调试了.
 <details> 
   <summary>关于这个dockerfile的repo</summary>
 <div style="color: green;">
