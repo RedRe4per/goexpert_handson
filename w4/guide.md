@@ -139,7 +139,6 @@
 
 <details> 
   <summary>关于这个dockerfile的repo</summary>
-<div style="color: green;">
 这个app要启动数据库与后端.
 这里面是一个python后端.文件结构是
 
@@ -152,14 +151,32 @@
 └── requirements.txt
 ```
 
+### 启动redis数据库
   后端需要连接至redis数据库,因为在app.py中有代码:
   ```python
 redis = Redis(host='redis', port=6379)
 ```
 所以这里要启动redis的docker image和后端的docker image.
 在启动redis的docker image时,用到指令`docker run -d -p 6379:6379 --name=redis redislabs/redismod`,其中`--name=redis`是必要的,因为上面的代码中有语句`host='redis'`,即必须使用名称`redis`来识别.
-</div>
+
+### 运行后端主app
+想运行 app.py (也就是后端主文件),需要用指令 `python3 app.py`,但是直接使用的话会报错 ModuleNotFoundError: No module named 'flask'. 这是因为没有安装依赖(与node.js完全一样的道理).
+使用 `pip3 install -r requirements.txt` 来安装.安装后再运行 `python3 app.py` 就能跑起来了.
+
+这里成功后会进入 redis.exceptions 的 ConnectionError的 list 页面.
+
 </details>
+
+<details> 
+  <summary>使用 git log 与 git reset --hard <commit id> 来直接回滚更改的丝滑小连招</summary>
+比如刚才为了测试 app.py 文件的可用性与 debug,我修改了很多东西,加了注释等.现在测试完了需要改回去了.
+
+有一种办法可以直接回滚更改.
+1. 使用指令 `git log` 来列出文件更新的 commit.
+2. 使用 `git reset --hard <commit id>` 来直接回滚到指定版本.
+
+</details>
+
 
 3. **Build the Docker Image**
     - Run the command: `docker build -t <image-name> .`.
