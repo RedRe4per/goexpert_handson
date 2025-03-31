@@ -91,13 +91,32 @@
     - Fill it with instructions to build your Docker image. A simple Node.js app's Dockerfile might look like https://github.com/AutomationLover/website-visit-count/blob/main/Dockerfile
    
    folk到了我自己的repo,地址是: https://github.com/RedRe4per/website-visit-count
+<details>
+  <summary>关于这个dockerfile的repo</summary>
+这里面是一个python后端.文件结构是
+  ```
+  .
+├── Dockerfile
+├── README.md
+├── app.py
+├── compose.yaml
+└── requirements.txt
+  ```
 
-2. **Build the Docker Image**
+  后端需要连接至redis数据库,因为在app.py中有代码:
+  ```python
+redis = Redis(host='redis', port=6379)
+```
+所以这里要启动redis的docker image和后端的docker image.
+在启动redis的docker image时,用到指令`docker run -d -p 6379:6379 --name=redis redislabs/redismod`,其中`--name=redis`是必要的,因为上面的代码中有语句`host='redis'`,即必须使用名称`redis`来识别.
+</details>
+
+3. **Build the Docker Image**
     - Run the command: `docker build -t <image-name> .`.
     - For example, to build an image named my-app, run `docker build -t my-app .`.
     - Following steps https://github.com/AutomationLover/website-visit-count/blob/main/README.md, after git clone this repo
 
-3. **Deploy App**
+4. **Deploy App**
     - Deploy app with docker cli
     - Deploy app with docker compose
     - Deploy app with Docker Development Environments
