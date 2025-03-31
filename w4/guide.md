@@ -94,7 +94,7 @@
    folk到了我自己的repo,地址是: https://github.com/RedRe4per/website-visit-count
 <details>
   <summary>关于这个dockerfile的repo</summary>
-<div style="color: lightgray;">
+<div style="color: green;">
 这里面是一个python后端.文件结构是
 
 ```
