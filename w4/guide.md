@@ -95,6 +95,7 @@
 <details>
   <summary>关于这个dockerfile的repo</summary>
 <div style="color: green;">
+这个app要启动数据库与后端.
 这里面是一个python后端.文件结构是
 
 ```
