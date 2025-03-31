@@ -94,22 +94,15 @@
 <details>
   <summary>关于这个dockerfile的repo</summary>
 这里面是一个python后端.文件结构是
-    ```python
-      .
-    ├── Dockerfile
-    ├── README.md
-    ├── app.py
-    ├── compose.yaml
-    └── requirements.txt
+
 ```
-  ```python
-      .
-    ├── Dockerfile
-    ├── README.md
-    ├── app.py
-    ├── compose.yaml
-    └── requirements.txt
-  ```
+.
+├── Dockerfile
+├── README.md
+├── app.py
+├── compose.yaml
+└── requirements.txt
+```
 
   后端需要连接至redis数据库,因为在app.py中有代码:
   ```python
