@@ -93,10 +93,26 @@
    
    folk到了我自己的repo,地址是: https://github.com/RedRe4per/website-visit-count
 
-   **怎么开始做给定app的 Dockerfile 的调试?**
+**怎么开始做给定app的 Dockerfile 的调试?**
 
 首先是可以在本机跑这些命令,跑通了再去打包.本机调试就需要先把 GitHub 的 repo 给 clone 下来,也就是和调试 developer 的代码相同的.
   在本机建一个 Developer 之类的专门文件夹, 然后在里面用 `mkdir docker` 来创建专门的文件夹, 然后 `cd` 进去,再 clone. clone 后再 cd 进去那个根文件夹,输入提示中就会出现(main), 这时就可以开始正式调试了.
+  
+<details> 
+  <summary>docker在什么目录下运行都是一样的</summary>
+  是的，在 macOS 系统中，无论你在什么目录下运行 Docker 命令，效果都是一样的。Docker 是一个独立的服务，运行在后台，与当前工作目录无关。
+
+### 影响因素
+
+- **当前目录**：只有在你使用相对路径或需要访问当前目录的文件时，当前目录才会影响命令。例如，使用 `docker build .` 时，当前目录会被用作构建上下文。
+- **绝对路径**：如果你在命令中使用绝对路径，当前目录不会影响命令的执行。
+
+### 总结
+
+- 启动 Docker 容器的命令在任何目录下执行都是一样的。
+- 只有在涉及文件路径时，当前目录才会影响命令的执行。
+</details> 
+
 <details> 
   <summary>关于这个dockerfile的repo</summary>
 <div style="color: green;">
