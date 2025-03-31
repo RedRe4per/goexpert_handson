@@ -114,6 +114,30 @@
 </details> 
 
 <details> 
+  <summary>使用 `vim <文件名>` 在 terminal 中直接进入文件编辑</summary>
+    主要就是按 `esc` 和按 `:` 来输入指令保存和返回.
+  在 Vim 中编辑 `app.py` 文件时，你可以使用以下命令来保存和退出：
+
+### 保存并退出
+
+1. **保存并退出**：
+   - 按 `Esc` 键进入命令模式。
+   - 输入 `:wq` 然后按 `Enter`。
+
+2. **仅保存**：
+   - 按 `Esc` 键进入命令模式。
+   - 输入 `:w` 然后按 `Enter`。
+
+### 不保存退出
+
+1. **不保存退出**：
+   - 按 `Esc` 键进入命令模式。
+   - 输入 `:q!` 然后按 `Enter`。
+
+这些命令适用于在 Vim 中编辑任何文件，包括 `app.py`。
+</details> 
+
+<details> 
   <summary>关于这个dockerfile的repo</summary>
 <div style="color: green;">
 这个app要启动数据库与后端.
