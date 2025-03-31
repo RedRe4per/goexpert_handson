@@ -66,8 +66,9 @@
 `docker attach` 适用于需要实时与容器交互的情况。
 </details>
 
-7. `docker restart <docker id>` 重新启动镜像
-8. **`docker run -it ubuntu /bin/bash`** 直接在本机进入docker容器内部,可以直接在容器内使用bash指令.
+7. `docker stop <docker id>` 停止镜像
+8. `docker restart <docker id>` 重新启动镜像
+9. **`docker run -it ubuntu /bin/bash`** 直接在本机进入docker容器内部,可以直接在容器内使用bash指令.
 
 <details>
   <summary>解释</summary>
