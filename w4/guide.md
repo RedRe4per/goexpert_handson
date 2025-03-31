@@ -114,7 +114,7 @@
 </details> 
 
 <details> 
-  <summary>使用 `vim <文件名>` 在 terminal 中直接进入文件编辑</summary>
+  <summary>使用 vim <文件名> 在 terminal 中直接进入文件编辑</summary>
     主要就是按 `esc` 和按 `:` 来输入指令保存和返回.
   在 Vim 中编辑 `app.py` 文件时，你可以使用以下命令来保存和退出：
 
@@ -191,6 +191,58 @@ redis = Redis(host='redis', port=6379)
     - Deploy app with docker compose
     - Deploy app with Docker Development Environments
 
+###关于docker compose
+docker compose这个文件允许同时运行几个 docker image,并且能够指明它们的关系(例如依赖),也就是orchestration.
+<details> 
+  <summary>详细</summary>
+Docker Compose 是一个用于定义和管理多容器 Docker 应用的工具。它使用 YAML 文件来配置应用的服务、网络和卷。以下是 Docker Compose 的一些关键特性：
+
+### 主要特性
+
+1. **多容器管理**：
+   - 可以同时启动和管理多个容器。
+
+2. **YAML 配置**：
+   - 使用 `docker-compose.yml` 文件定义应用的服务、网络和卷。
+
+3. **简化命令**：
+   - 使用简单的命令（如 `docker-compose up` 和 `docker-compose down`）来启动和停止应用。
+
+4. **环境隔离**：
+   - 支持在不同环境中运行相同的应用配置。
+
+### 基本用法
+
+1. **定义服务**：
+   - 在 `docker-compose.yml` 中定义应用的各个服务。
+
+2. **启动应用**：
+   - 使用 `docker-compose up` 启动所有服务。
+
+3. **停止应用**：
+   - 使用 `docker-compose down` 停止并移除所有服务。
+
+### 示例 `docker-compose.yml`
+
+```yaml
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+  redis:
+    image: redis
+```
+
+### 优势
+
+- **简化开发**：通过一个文件管理所有服务，简化开发和测试环境的设置。
+- **可移植性**：相同的配置可以在不同环境中使用，确保一致性。
+
+Docker Compose 是管理复杂应用的强大工具，特别适合需要多个服务协同工作的场景。
+
+</details>
 
 ## Level 3 (Mid-level)
 **Task**: Change Docker file and compose file.
