@@ -165,6 +165,7 @@ redis = Redis(host='redis', port=6379)
 
 这里成功后会进入 redis.exceptions 的 ConnectionError的 list 页面.
 
+到此为止,我们之前所有的工作都是为了测试 dockerfile 中的第一步,也就是创建打包 builder.
 </details>
 
 <details> 
