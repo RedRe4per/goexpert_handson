@@ -12,12 +12,13 @@
 **Task**: Change Docker file and compose file.
 **Objective**: Understand parameters in Docker file and compose file.
 
+-------------------
 
 ### Docker常用的操作指令
 1. `docker pull nginx` 拉取nginx镜像
 2. `docker run -d -p 8080:80 nginx` 在8080端口启动ngix镜像.
-   <details>
-
+   
+<details>
   <summary> 关于8080:80</summary>
 是的，`docker run -d -p 8080:80 nginx` 中的 `:80` 是指容器内部的端口。
 
@@ -41,8 +42,8 @@
 4. `docker ps`, `docker ps -a` 列出镜像. `-a`是all,包括停止的镜像
 5. `docker logs <docker id>` 用于查看 Docker 容器日志的命令
 6. `docker attach <docker id>` 附加到一个正在运行的 Docker 容器的终端会话
-      <details>
 
+<details>
   <summary>解释</summary>
 `docker attach c4f1d8382bfa` 用于附加到一个正在运行的 Docker 容器的终端会话。
 
@@ -67,14 +68,8 @@
 
 7. `docker restart <docker id>` 重新启动镜像
 8. **`docker run -it ubuntu /bin/bash`** 直接在本机进入docker容器内部,可以直接在容器内使用bash指令.
-</details>
 
-3. `curl 127.0.0.1:8080`
-4. `docker ps`, `docker ps -a` 列出镜像. `-a`是all,包括停止的镜像
-5. `docker logs <docker id>` 用于查看 Docker 容器日志的命令
-6. `docker attach <docker id>` 附加到一个正在运行的 Docker 容器的终端会话
-      <details>
-
+<details>
   <summary>解释</summary>
 `docker run -it ubuntu /bin/bash` 命令用于启动一个新的 Ubuntu 容器，并在其中打开一个交互式 Bash shell。
 
