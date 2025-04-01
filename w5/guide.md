@@ -21,8 +21,8 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 - To create an EC2 instance
    Select "Amazon Linux", and MyKeyPair
 
-这里要注意 EC2 instance 和 key-pair 都是有地区限制的,必须要在同一个区域 AWS 才能找到.
-</br> 如果进错区了,用 `aws configure` 重新登录并且选择区域.
+>这里要注意 EC2 instance 和 key-pair 都是有地区限制的,必须要在同一个区域 AWS 才能找到.</br>
+>如果进错区了,用 `aws configure` 重新登录并且选择区域.
 
 <details>
   <summary>关于 EC2 instance 创建时的 network 以及 subnet</summary>
