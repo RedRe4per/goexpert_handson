@@ -24,7 +24,7 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 >这里要注意 EC2 instance 和 key-pair 都是有地区限制的,必须要在同一个区域 AWS 才能找到.</br>
 >如果进错区了,用 `aws configure` 重新登录并且选择区域.
 
-<details>
+> <details>
   <summary>关于 EC2 instance 创建时的 network 以及 subnet</summary>
 EC2 instance 创建的时候选项里有 network (也就是vpc, private network), 还有网段 subnet, subnet之间要用官关(gateway)沟通.
 
