@@ -15,6 +15,10 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 
 可以使用命令 `ls -al | grep pem` 来查看自己的所有 key-pairs 以及权限(不分 region).
 
+也可以用 (GUI) AWS console 创建 key-pair,然后下载.
+
+这里实际上就是把公钥上传给了 AWS, 私钥保留在了 local.
+
 **Step 2**: Create the EC2 instance
 - To create an EC2 instance
    Select "Amazon Linux", and MyKeyPair
