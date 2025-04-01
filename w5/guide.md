@@ -26,7 +26,7 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 - more to read for Linux file permission in https://www.linuxfoundation.org/blog/blog/classic-sysadmin-understanding-linux-file-permissions
 
 <details>
-  <summary>关于常用的 chmod 400 MyKeyPair.pem 指令</summary>
+  <summary>关于 chmod 400 MyKeyPair.pem 指令</summary>
 `chmod 400 devops0401kp2.pem` 命令用于设置文件的权限，使得只有文件所有者可以读取该文件，而没有写入或执行权限。
 
 ### 解释
