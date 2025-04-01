@@ -24,7 +24,7 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 >这里要注意 EC2 instance 和 key-pair 都是有地区限制的,必须要在同一个区域 AWS 才能找到.</br>
 >如果进错区了,用 `aws configure` 重新登录并且选择区域.
 
-<details style="color: lightgray;">
+<details>
   <summary>关于 EC2 instance 创建时的 network 以及 subnet</summary>
 EC2 instance 创建的时候选项里有 network (也就是vpc, private network), 还有网段 subnet, subnet之间要用官关(gateway)沟通.
 
@@ -71,12 +71,11 @@ public ip和private ip是有映射关系的.从外网只能访问public ip,而�
 - more to read for Linux file permission in https://www.linuxfoundation.org/blog/blog/classic-sysadmin-understanding-linux-file-permissions
 
 <details>
-  <summary>关于 chmod 400 MyKeyPair.pem 指令</summary>
+  <summary>用 chmod 400 MyKeyPair.pem 指令来增加 private key 的安全程度</summary>
 `chmod 400 devops0401kp2.pem` 命令用于设置文件的权限，使得只有文件所有者可以读取该文件，而没有写入或执行权限。
 400是三位数,第一位表示owner有什么权限,第二位表示group有什么权限,第三位表示其他人有什么权限.
 
 ### 解释
-
 - **`chmod`**：更改文件权限的命令。
 - **`400`**：权限设置。
   - `4` 表示读权限。
@@ -84,10 +83,13 @@ public ip和private ip是有映射关系的.从外网只能访问public ip,而�
 - **`devops0401kp2.pem`**：要更改权限的文件。
 
 ### 用途
-
 - 常用于保护私钥文件，确保只有文件所有者可以读取，防止未经授权的访问。
+
+改之前和改之后,可以用 `ls -al | grep pem` 或者 `ls -al | grep <key-name>` 来查看权限. </br>
+改之后就只有 user 可读并且不可修改, 其他人都不可读. 让 private key 很安全.
 </details>
 
+> Connect 到 EC2 instance: 在EC2 console 左上点击 connect, 选择 SSH, 然后使用 example 生成的指令 `ssh -i "devops0401kp2.pem" ec2-user@ec2-54-242-192-230.compute-1.amazonaws.com` 连接. 提示确认yes后,出现鸽子提示,即登录成功. 此时
 
 **Step 4**: set up AWS configure
 run aws configure, get credential from you administrator user, and set region to us-west-2
@@ -101,7 +103,7 @@ you may have set up AWS configure in your laptop, you can fetch aws_access_key_i
 ls -al ~/.aws
 cat ~/.aws/credentials
 ```
-
+>这里可以用 scp 的方法把本机的 aws credentials 都复制过来, 也可以直接重新登录.
 
 **Step 5**: set up ecs-cli
 
@@ -182,6 +184,8 @@ If you do not want to add sudo, run
 sudo usermod -aG docker ec2-user
 ```
 logout and then login
+
+>使用上面的 `sudo service docker restart` 就行.
 
 the sudo usermod -aG docker ec2-user command is used to add the user "ec2-user" to the "docker" group, allowing that user to run Docker commands without needing to use sudo or switch to the root user.
 - `usermod`: This is the command used to modify a user account. It is typically followed by various options and arguments to specify the modifications to be made.
