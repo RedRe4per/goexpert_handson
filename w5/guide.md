@@ -60,6 +60,13 @@ public ip和private ip是有映射关系的.从外网只能访问public ip,而�
 
 </details>
 
+<details>
+  <summary>关于 AMI location</summary>
+在EC2 details里面有这一项.它是对应创建EC2 instance时选择的配置,实际上就是虚拟机休眠时候的配置文件.
+
+如果使用terraform创建虚拟机,我们会需要它.
+</details>
+
 **Step 3**: Connect to the EC2 instance
 - To connect to the EC2 instance from AWS console
 - run `chmod 400 MyKeyPair.pem`, if you get error `Permissions 0644 for 'MyKeyPair.pem' are too open.`
