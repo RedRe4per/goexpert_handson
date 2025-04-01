@@ -25,14 +25,14 @@
 
 ### 我对这三个服务的理解
 1. EC2（Elastic Compute Cloud）
-    类似于：虚拟机（VM）。
-    功能：提供可扩展的计算能力，类似于在云中运行的物理服务器。
+    </br>类似于：虚拟机（VM）。
+    </br>功能：提供可扩展的计算能力，类似于在云中运行的物理服务器。
 2. ECS（Elastic Container Service）
-    类似于：容器编排服务。
-    功能：管理和运行 Docker 容器，但不等同于 Kubernetes（K8s）。ECS 是 AWS 的容器编排服务，类似于 Kubernetes，但更紧密集成在 AWS 生态系统中。
+    </br>类似于：容器编排服务。
+    </br>功能：管理和运行 Docker 容器，但不等同于 Kubernetes（K8s）。ECS 是 AWS 的容器编排服务，类似于 Kubernetes，但更紧密集成在 AWS 生态系统中。
 3. ECR（Elastic Container Registry）
-    类似于：容器镜像存储。
-    功能：存储和管理 Docker 容器镜像，类似于 Docker Hub。
+    </br>类似于：容器镜像存储。
+    </br>功能：存储和管理 Docker 容器镜像，类似于 Docker Hub。
 **总结**
 EC2：虚拟机服务。
 ECS：容器编排服务（类似于 Kubernetes，但不是 Kubernetes）。
