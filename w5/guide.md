@@ -13,11 +13,11 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 ```
 - This command will create a key pair named `MyKeyPair` and save the private key in a file named `MyKeyPair.pem`.
 
-可以使用命令 `ls -al | grep pem` 来查看自己的所有 key-pairs 以及权限(不分 region).
+> 可以使用命令 `ls -al | grep pem` 来查看自己的所有 key-pairs 以及权限(不分 region).
 
-也可以用 (GUI) AWS console 创建 key-pair,然后下载.
+> 也可以用 (GUI) AWS console 创建 key-pair,然后下载.
 
-这里实际上就是把公钥上传给了 AWS, 私钥保留在了 local.
+> 这里实际上就是把公钥上传给了 AWS, 私钥保留在了 local.
 
 **Step 2**: Create the EC2 instance
 - To create an EC2 instance
@@ -90,14 +90,6 @@ public ip和private ip是有映射关系的.从外网只能访问public ip,而�
 - 常用于保护私钥文件，确保只有文件所有者可以读取，防止未经授权的访问。
 </details>
 
-<div style="color: lightgray;">
-  <p>这是第一段文字。</p>
-  <p>这是第二段文字，包含<strong>加粗</strong>和<em>斜体</em>。</p>
-  <ul>
-    <li>列表项 1</li>
-    <li>列表项 2</li>
-  </ul>
-</div>
 
 **Step 4**: set up AWS configure
 run aws configure, get credential from you administrator user, and set region to us-west-2
