@@ -25,6 +25,23 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 - run `chmod 400 MyKeyPair.pem`, if you get error `Permissions 0644 for 'MyKeyPair.pem' are too open.`
 - more to read for Linux file permission in https://www.linuxfoundation.org/blog/blog/classic-sysadmin-understanding-linux-file-permissions
 
+<details>
+  <summary>关于常用的 chmod 400 MyKeyPair.pem 指令</summary>
+`chmod 400 devops0401kp2.pem` 命令用于设置文件的权限，使得只有文件所有者可以读取该文件，而没有写入或执行权限。
+
+### 解释
+
+- **`chmod`**：更改文件权限的命令。
+- **`400`**：权限设置。
+  - `4` 表示读权限。
+  - `0` 表示没有写或执行权限。
+- **`devops0401kp2.pem`**：要更改权限的文件。
+
+### 用途
+
+- 常用于保护私钥文件，确保只有文件所有者可以读取，防止未经授权的访问。
+</details>
+
 **Step 4**: set up AWS configure
 run aws configure, get credential from you administrator user, and set region to us-west-2
 
