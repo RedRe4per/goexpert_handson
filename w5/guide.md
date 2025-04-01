@@ -54,6 +54,10 @@ Subnet：定义网络位置和可用区。
   <summary>关于 EC2 instance 的 public ip 和 private ip</summary>
 public ip和private ip是有映射关系的.从外网只能访问public ip,而内网才能用private ip.
 可以通过 `ping ec2-54-242-192-230.compute-1.amazonaws.com`, 也就是 `ping <Public IPv4 DNS>` 来查到.   
+
+然后是VPC,有多个AZ(availability zone)
+![Screenshot 2025-04-01 at 10 50 15 pm](https://github.com/user-attachments/assets/4bf3497c-d15e-461f-a2f2-8369fc288e38)
+
 </details>
 
 **Step 3**: Connect to the EC2 instance
