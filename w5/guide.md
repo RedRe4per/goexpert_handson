@@ -26,6 +26,36 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 这里要注意 EC2 instance 和 key-pair 都是有地区限制的,必须要在同一个区域 AWS 才能找到.
 </br> 如果进错区了,用 `aws configure` 重新登录并且选择区域.
 
+<details>
+  <summary>关于 EC2 instance 创建时的 network 以及 subnet</summary>
+EC2 instance 创建的时候选项里有 network (也就是vpc, private network), 还有网段 subnet, subnet之间要用官关(gateway)沟通.
+
+
+在创建 EC2 实例时，网络和子网的选择是关键配置。以下是简要说明：
+
+VPC（Virtual Private Cloud）
+作用：定义一个隔离的网络环境。
+选择：创建实例时选择一个 VPC，决定实例所在的网络。
+Subnet
+作用：VPC 内的子网，决定实例的 IP 地址范围。
+选择：选择一个子网，决定实例的可用区和网络位置。
+通信
+子网间通信：同一 VPC 内的子网可以直接通信。
+网关：用于连接 VPC 与外部网络（如互联网）。
+总结
+VPC：定义网络边界。
+Subnet：定义网络位置和可用区。
+网关：连接内外网络。
+通过这些配置，你可以控制 EC2 实例的网络环境和访问权限。
+   
+</details>
+
+<details>
+  <summary>关于 EC2 instance 的 public ip 和 private ip</summary>
+public ip和private ip是有映射关系的.从外网只能访问public ip,而内网才能用private ip.
+可以通过 `ping ec2-54-242-192-230.compute-1.amazonaws.com`, 也就是 `ping <Public IPv4 DNS>` 来查到.   
+</details>
+
 **Step 3**: Connect to the EC2 instance
 - To connect to the EC2 instance from AWS console
 - run `chmod 400 MyKeyPair.pem`, if you get error `Permissions 0644 for 'MyKeyPair.pem' are too open.`
