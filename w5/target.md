@@ -33,8 +33,9 @@
 3. ECR（Elastic Container Registry）
     </br>类似于：容器镜像存储。
     </br>功能：存储和管理 Docker 容器镜像，类似于 Docker Hub。
-**总结**
-EC2：虚拟机服务。
-ECS：容器编排服务（类似于 Kubernetes，但不是 Kubernetes）。
-ECR：容器镜像存储服务。
+   
+</br>**总结**
+</br>EC2：虚拟机服务。
+</br>ECS：容器编排服务（类似于 Kubernetes，但不是 Kubernetes）。
+</br>ECR：容器镜像存储服务。
 
