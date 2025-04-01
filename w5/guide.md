@@ -103,7 +103,7 @@ you may have set up AWS configure in your laptop, you can fetch aws_access_key_i
 ls -al ~/.aws
 cat ~/.aws/credentials
 ```
->这里可以用 scp 的方法把本机的 aws credentials 都复制过来, 也可以直接重新登录.
+>这里可以用 scp 的方法把本机的 aws credentials 都复制过来, 也可以直接重新登录. scp方法 `scp -i MyKeyPair.pem ~/.aws/credentials ec2-user@ec2-3-88-45-128.compute-1.amazonaws.com:~/.aws`, 需要把里面的 mykeypair.pem, ec2-3-88-45-128.compute-1 这些参数都改成自己 EC2 实例上的.
 
 **Step 5**: set up ecs-cli
 
