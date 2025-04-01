@@ -75,6 +75,7 @@ public ip和private ip是有映射关系的.从外网只能访问public ip,而�
 <details>
   <summary>关于 chmod 400 MyKeyPair.pem 指令</summary>
 `chmod 400 devops0401kp2.pem` 命令用于设置文件的权限，使得只有文件所有者可以读取该文件，而没有写入或执行权限。
+400是三位数,第一位表示owner有什么权限,第二位表示group有什么权限,第三位表示其他人有什么权限.
 
 ### 解释
 
@@ -88,6 +89,15 @@ public ip和private ip是有映射关系的.从外网只能访问public ip,而�
 
 - 常用于保护私钥文件，确保只有文件所有者可以读取，防止未经授权的访问。
 </details>
+
+<div style="color: lightgray;">
+  <p>这是第一段文字。</p>
+  <p>这是第二段文字，包含<strong>加粗</strong>和<em>斜体</em>。</p>
+  <ul>
+    <li>列表项 1</li>
+    <li>列表项 2</li>
+  </ul>
+</div>
 
 **Step 4**: set up AWS configure
 run aws configure, get credential from you administrator user, and set region to us-west-2
