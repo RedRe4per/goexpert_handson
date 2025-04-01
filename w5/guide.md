@@ -13,6 +13,8 @@ aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text
 ```
 - This command will create a key pair named `MyKeyPair` and save the private key in a file named `MyKeyPair.pem`.
 
+可以使用命令 `ls -al | grep pem` 来查看自己的所有 key-pairs 以及权限(不分 region).
+
 **Step 2**: Create the EC2 instance
 - To create an EC2 instance
    Select "Amazon Linux", and MyKeyPair
